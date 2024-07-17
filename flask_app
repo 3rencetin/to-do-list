@@ -1,0 +1,11 @@
+from unicodedata import name
+from flask import Flask, rendertemplate
+
+app = Flask(name)
+
+@app.route('/')
+def home():
+    return rendertemplate('index.html')
+
+if name == '__main':
+    app.run(debug=True)
